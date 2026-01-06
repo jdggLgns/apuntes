@@ -1,11 +1,161 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Apuntes</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
   </head>
+
   <body>
-    <h1>Apuntes</h1>
+    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">A</div>
+          <div class="brand-text">
+            <h1 class="title">Apuntes</h1>
+          </div>
+        </div>
+
+        <div class="header-actions">
+          <div class="search">
+            <label class="sr-only" for="searchInput">Buscar tema</label>
+            <input
+              id="searchInput"
+              class="search-input"
+              type="search"
+              placeholder="Buscar… (HTML, JS, BBDD)"
+              autocomplete="on"
+            />
+            <span class="search-hint" aria-hidden="true">⌘K</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="hero">
+          <div class="hero-card">
+            <h2 class="hero-title">Plan rápido de repaso</h2>
+            <p class="hero-text">
+              Entra en un tema, mira el PDF o tus notas, y practica con
+              mini-ejercicios. Temas disponibles:
+            </p>
+            <div class="pill-row" aria-label="Etiquetas">
+              <span class="pill pill--blue">HTML</span>
+              <span class="pill pill--orange">CSS</span>
+              <span class="pill pill--blue">JavaScript</span>
+              <span class="pill pill--orange">BBDD</span>
+            </div>
+          </div>
+
+          <div class="hero-side">
+            <div class="stat">
+              <span class="stat-kpi" id="cardsCount">3</span>
+              <span class="stat-label">secciones</span>
+            </div>
+            <div class="tip">
+              <p class="tip-title">Tip</p>
+              <p class="tip-text">
+                Pulsa <strong>⌘K</strong> (Mac) o
+                <strong>Ctrl+K</strong> (Windows) para enfocar el buscador.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="contenido" class="container main">
+      <section class="section-head">
+        <h2 class="section-title">Temas</h2>
+        <p class="section-desc">
+          Abre tus apuntes por tema (y luego iremos añadiendo ejercicios
+          interactivos).
+        </p>
+      </section>
+
+      <section class="cards" id="cards">
+        <a
+          class="card"
+          href="pages/html-css.html"
+          data-keywords="html css estilos etiquetas responsive"
+        >
+          <div class="card-top">
+            <span class="badge badge--blue">PDF</span>
+            <span class="badge badge--orange">Base</span>
+          </div>
+          <h3 class="card-title">HTML y CSS</h3>
+          <p class="card-text">
+            Documentación HTML y CSS para repasar. Esta sección incluye un PDF
+            con información y ejercicios.
+          </p>
+          <div class="card-meta">
+            <span class="meta-item">📄 Ver apuntes</span>
+            <span class="meta-item">→</span>
+          </div>
+        </a>
+
+        <a
+          class="card"
+          href="pages/javascript.html"
+          data-keywords="javascript js dom eventos fetch promesas"
+        >
+          <div class="card-top">
+            <span class="badge badge--blue">Práctica</span>
+            <span class="badge badge--orange">DOM</span>
+          </div>
+          <h3 class="card-title">JavaScript</h3>
+          <p class="card-text">
+            Documentación Javascript. Variables, funciones, eventos, DOM,
+            async/await y mini-retos.
+          </p>
+          <div class="card-meta">
+            <span class="meta-item">🧠 Entrenar</span>
+            <span class="meta-item">→</span>
+          </div>
+        </a>
+
+        <a
+          class="card"
+          href="pages/bbdd.html"
+          data-keywords="bbdd sql mysql tablas joins indices"
+        >
+          <div class="card-top">
+            <span class="badge badge--blue">Esquemas</span>
+            <span class="badge badge--orange">SQL</span>
+          </div>
+          <h3 class="card-title">BBDD</h3>
+          <p class="card-text">
+            Modelado, consultas SQL, Formas Normales y FNBC, joins, índices y
+            ejercicios.
+          </p>
+          <div class="card-meta">
+            <span class="meta-item">🗃️ Repasar</span>
+            <span class="meta-item">→</span>
+          </div>
+        </a>
+      </section>
+
+      <section class="empty-state" id="emptyState" hidden>
+        <div class="empty-card">
+          <h3 class="empty-title">No hay resultados</h3>
+          <p class="empty-text">Prueba con “html”, “js”, “sql”…</p>
+          <button class="btn" type="button" id="resetBtn">
+            Limpiar búsqueda
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <p class="footer-text">Hecho para repasar✨</p>
+      </div>
+    </footer>
+
+    <script src="js/app.js" defer></script>
   </body>
 </html>
